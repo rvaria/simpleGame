@@ -1,3 +1,3 @@
 ﻿
-using var game = new simpleGame.Game1();
+using var game = new simpleGame.SimpleGame();
 game.Run();

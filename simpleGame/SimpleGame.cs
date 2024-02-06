@@ -4,12 +4,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace simpleGame
 {
-    public class Game1 : Game
+    public class SimpleGame : Game
     {
+
+        Player player;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public Game1()
+        public SimpleGame()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -28,6 +30,8 @@ namespace simpleGame
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            player = new Player(this.Content);
+        
         }
 
         protected override void Update(GameTime gameTime)
@@ -45,6 +49,9 @@ namespace simpleGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+            player.draw(_spriteBatch);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
