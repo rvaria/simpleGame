@@ -40,7 +40,7 @@ namespace simpleGame
                 Exit();
 
             // TODO: Add your update logic here
-
+            player.keyPress();
             base.Update(gameTime);
         }
 
